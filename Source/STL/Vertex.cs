@@ -103,13 +103,13 @@ namespace QuantumConcepts.Formats.StereoLithography
                 return null;
 
             //Parse the three coordinates.
-            if (!float.TryParse(match.Groups["X"].Value, numberStyle, CultureInfo.CurrentCulture, out x))
+            if (!float.TryParse(match.Groups["X"].Value, numberStyle, CultureInfo.InvariantCulture, out x))
                 throw new FormatException("Could not parse X coordinate \"{0}\" as a decimal.".FormatString(match.Groups["X"]));
 
-            if (!float.TryParse(match.Groups["Y"].Value, numberStyle, CultureInfo.CurrentCulture, out y))
+            if (!float.TryParse(match.Groups["Y"].Value, numberStyle, CultureInfo.InvariantCulture, out y))
                 throw new FormatException("Could not parse Y coordinate \"{0}\" as a decimal.".FormatString(match.Groups["Y"]));
 
-            if (!float.TryParse(match.Groups["Z"].Value, numberStyle, CultureInfo.CurrentCulture, out z))
+            if (!float.TryParse(match.Groups["Z"].Value, numberStyle, CultureInfo.InvariantCulture, out z))
                 throw new FormatException("Could not parse Z coordinate \"{0}\" as a decimal.".FormatString(match.Groups["Z"]));
 
             return new Vertex()
